@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizator Wydarzeń</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <h1>Organizator Wydarzeń</h1>
+    <hr>
+    <div class="event-form-container">
+        <h2>Dodaj Wydarzenie</h2>
+        <form class="event-form">
+            <label for="event-name">Nazwa:</label>
+            <input type="text" class="event-name" required><br>
+            <label for="event-date">Data:</label>
+            <input type="date" class="event-date" required><br>
+            <label for="event-time">Godzina:</label>
+            <input type="time" class="event-time" required><br>
+            <label for="event-location">Miejsce:</label>
+            <input type="text" class="event-location" required><br>
+            <label for="event-description">Opis:</label>
+            <textarea class="event-description" required></textarea><br>
+
+            <div class="submit-btns">
+                <button type="submit">Zapisz</button>
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+        <hr>
+    </div>
+    <div class="event-container">
+        <h2>Lista Wydarzeń</h2>
+
+        <div class="search-container">
+            Wyszukiwarka:
+            <input type="text" class="event-search" placeholder="Wpisz czego szukasz">
+            <button class="search-button">Szukaj</button>
+            <button class="clear-search-button">Wyczyść</button>
+        </div>
+
+        <table class="event-table">
+            <tr>
+                <th class="tNazwa">Nazwa</th>
+                <th class="tData">Data
+                    <div class="sort-buttons">
+                        <button class="sort-oldest-button"><i class="fas fa-arrow-up"></i></button>
+                        <button class="sort-newest-button"><i class="fas fa-arrow-down"></i></button>
+                    </div>
+                </th>
+                <th class="tGodzina">Godzina</th>
+                <th class="tMiejsce">Miejsce</th>
+                <th class="tOpis">Opis</th>
+                <th class="tAkcje">Akcje</th>
+            </tr>
+        </table>
+    </div>
+    <footer class="footer">
+        <p>Copyright © 2023 - Łukasz Woźniakowski - Organizator Wydarzeń</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
