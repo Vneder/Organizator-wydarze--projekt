@@ -10,13 +10,13 @@ class EventStorageManager {
         localStorage.setItem('events', JSON.stringify(events));
     }
 
-    // Wczytywanie kolejności sortowania ze storage
+    // Wczytywanie sortowania ze storage
     static loadSortOrder() {
         const sortOrder = localStorage.getItem('sortOrder');
         return sortOrder || 'oldest';
     }
 
-    // Zapisywania kolejności sortowania do storage
+    // Zapisywania sortowania do storage
     static saveSortOrder(sortOrder) {
         localStorage.setItem('sortOrder', sortOrder);
     }
@@ -37,7 +37,7 @@ class FormManager {
     handleFormSubmit(event) {
         event.preventDefault();
 
-        // Pobieranie wartości pól z formularza
+        // Pobieranie pól z formularza
         const eventName = document.querySelector('.event-name').value;
         const eventDate = document.querySelector('.event-date').value;
         const eventTime = document.querySelector('.event-time').value;
@@ -45,7 +45,7 @@ class FormManager {
         const eventDescription = document.querySelector('.event-description').value;
 
         if (this.eventOrganizer.editingEvent) {
-            // Aktualizacja istniejącego wydarzenia
+            // Aktualizacja wydarzenia
             this.eventOrganizer.editingEvent.name = eventName;
             this.eventOrganizer.editingEvent.date = eventDate;
             this.eventOrganizer.editingEvent.time = eventTime;
@@ -54,7 +54,7 @@ class FormManager {
             this.eventOrganizer.saveEvents();
             this.eventOrganizer.resetForm();
         } else {
-            // Dodawanie nowego wydarzenia
+            // Dodawanie wydarzenia (Tworzenie obiektu)
             const event = {
                 id: Date.now(),
                 name: eventName,
@@ -91,7 +91,7 @@ class EventManager {
         EventStorageManager.saveEvents(this.events);
     }
 
-    // Dodawanie nowego wydarzenia
+    // Dodawanie wydarzenia
     addEvent(event) {
         this.events.push(event);
         this.saveEvents();

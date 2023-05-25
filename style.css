@@ -91,18 +91,18 @@ form {
 }
 
 
-.tGodzina,
-.tData {
+.header-Godzina,
+.header-Data {
     width: 10%;
 }
 
-.tNazwa,
-.tMiejsce,
-.tAkcje {
+.header-Nazwa,
+.header-Miejsce,
+.header-Akcje {
     width: 15%;
 }
 
-.tOpisce {
+.header-Opisce {
     width: 35%;
 }
 
